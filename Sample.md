@@ -1,8 +1,8 @@
 # README Generator
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)
 ## Description
-This project takes input from the user and creates a README file.
+This project takes user input and creates a README.md file.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -15,19 +15,20 @@ This project takes input from the user and creates a README file.
 ```
 node index.js
 node index2.js
+node index444.js
 ```
 
 ## Usage
-
+No usage information available.
 
 ## Contributions
-
+No contribution guidelines available.
 
 ## Testing
-
+No test instructions available.
 
 ## License
-README Generator is available under the [MIT License](https://opensource.org/licenses/MIT).
+README Generator is available under the [Perl License](https://opensource.org/licenses/Artistic-2.0).
 
 ## Questions
 Questions, comments, concerns? Contact me on [Github](https://github.com/richardjhong) or send me an email at rhong24@gmail.com.

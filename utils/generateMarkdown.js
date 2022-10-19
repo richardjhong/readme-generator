@@ -1,36 +1,35 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
+const renderLicenseBadge = (license) => {
   switch(license) {
     case 'MIT':
       return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
-      break;
     case 'Apache':
       return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
-      break;
     case 'Perl':
       return `[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)`
-      break;
-    default:
-      return null;
+    case 'None':
+      return;
   }
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+const renderLicenseSection = (license, title) =>{
+  switch(license) {
+    case 'MIT':
+      return `${title} is available under the [MIT License](https://opensource.org/licenses/MIT).`
+    case 'Apache':
+      return `${title} is available under the [Apache License](https://opensource.org/licenses/Apache-2.0).`
+    case 'Perl':
+      return `${title} is available under the [Perl License](https://opensource.org/licenses/Artistic-2.0).`
+    case 'None':
+      return;
+  }
+}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+const generateMarkdown = (data) => {
   const { username, email, license, title, description, installation, usage, contributions, testing } = data
 
   return `# ${title}
 
-${renderLicenseBadge(license) ?? null}
+${renderLicenseBadge(license) ?? ""}
 ## Description
 ${description}
 
@@ -43,7 +42,7 @@ ${description}
 
 ## Installation
 \`\`\`
-${installation}
+${installation.trim()}
 \`\`\`
 
 ## Usage
@@ -56,15 +55,15 @@ ${contributions ?? null}
 ${testing ?? null}
 
 ## License
+${renderLicenseSection(license, title)}
 
 ## Questions
-Feel free to contact me on [Github](https://github.com/${username}) or send me an email at ${email}.
-`;
+Questions, comments, concerns? Contact me on [Github](https://github.com/${username}) or send me an email at ${email}.
+`
 }
 
 module.exports = {
   renderLicenseBadge,
-  renderLicenseLink,
   renderLicenseSection,
   generateMarkdown
 }

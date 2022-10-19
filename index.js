@@ -19,7 +19,8 @@ const questions = [
     choices: [
       'MIT', 
       'Apache',
-      'Perl'
+      'Perl',
+      'None'
     ]
   },
   {
@@ -33,25 +34,36 @@ const questions = [
     name: 'description'
   },
   {
+    // done with editor in the event of multiple cli instruction lines being 
+    // needed
     type: 'editor',
     message: 'Please list any installation instructions at this time.',
     name: 'installation',
-    waitUserInput: true,
+    waitUserInput: false,
   },
   {
     type: 'input',
     message: 'Please list any usage information at this time.',
-    name: 'usage'
+    name: 'usage',
+    default() {
+      return 'No usage information available.';
+    },
   },
   {
     type: 'input',
     message: 'Please list any contribution guidelines at this time.',
-    name: 'contributions'
+    name: 'contributions',
+    default() {
+      return 'No contribution guidelines available.';
+    },
   },
   {
     type: 'input',
     message: 'Please list any instructions relevant to testing at this time.',
-    name: 'testing'
+    name: 'testing',
+    default() {
+      return 'No test instructions available.';
+    },
   }
 ];
 // destructuring each question to be used for shorter names within prompt 
@@ -76,7 +88,7 @@ const init = () => {
     contributions,
     testing
   ]).then((response) => {
-    writeToFile('README.md', response)
+    writeToFile('Sample.md', response)
   })
 }
 
