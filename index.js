@@ -1,8 +1,6 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const markdownMethods = require('./utils/generateMarkdown')
-// TODO: Create an array of questions for user input
 const questions = [
   {
     type: 'input',
@@ -35,9 +33,10 @@ const questions = [
     name: 'description'
   },
   {
-    type: 'input',
+    type: 'editor',
     message: 'Please list any installation instructions at this time.',
-    name: 'installation'
+    name: 'installation',
+    waitUserInput: true,
   },
   {
     type: 'input',
@@ -47,16 +46,17 @@ const questions = [
   {
     type: 'input',
     message: 'Please list any contribution guidelines at this time.',
-    name: 'contribution'
+    name: 'contributions'
   },
   {
     type: 'input',
     message: 'Please list any instructions relevant to testing at this time.',
-    name: 'instructions'
+    name: 'testing'
   }
 ];
-
-const [username, email, license, title, description, installation, usage, contribution, instructions] = questions
+// destructuring each question to be used for shorter names within prompt 
+// method of inquirer in init function below
+const [username, email, license, title, description, installation, usage, contributions, testing] = questions
 
 const writeToFile = (fileName, data) =>{
   fs.writeFile(`${fileName}`, markdownMethods.generateMarkdown(data), (err) => {
@@ -64,7 +64,7 @@ const writeToFile = (fileName, data) =>{
   })
 }
 
-function init() {
+const init = () => {
   inquirer.prompt([
     username,
     email,
@@ -73,14 +73,12 @@ function init() {
     description,
     installation,
     usage,
-    contribution,
-    instructions
+    contributions,
+    testing
   ]).then((response) => {
     writeToFile('README.md', response)
   })
 }
 
-// Function call to initialize app
 init();
 
-// console.log('test: ', markdownMethods)

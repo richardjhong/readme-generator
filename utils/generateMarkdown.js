@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
       return `[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)`
       break;
     default:
-      return ""
+      return null;
   }
 }
 
@@ -26,19 +26,39 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  const { username, email, license, title, description, installation, usage, contribution, instructions } = data
+  const { username, email, license, title, description, installation, usage, contributions, testing } = data
 
   return `# ${title}
 
-# Description
+${renderLicenseBadge(license) ?? null}
+## Description
 ${description}
 
-# Installation
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributions](#contributions)
+- [Testing](#testing)
+- [License](#license)
+
+## Installation
 \`\`\`
 ${installation}
 \`\`\`
 
+## Usage
+${usage ?? null}
 
+## Contributions
+${contributions ?? null}
+
+## Testing
+${testing ?? null}
+
+## License
+
+## Questions
+Feel free to contact me on [Github](https://github.com/${username}) or send me an email at ${email}.
 `;
 }
 
