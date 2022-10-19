@@ -1,8 +1,8 @@
 # README Generator
 
-[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ## Description
-This project takes user input and creates a README.md file.
+This project takes input from the user and creates a markdown file.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -14,8 +14,7 @@ This project takes user input and creates a README.md file.
 ## Installation
 ```
 node index.js
-node index2.js
-node index444.js
+node index222.js
 ```
 
 ## Usage
@@ -28,7 +27,7 @@ No contribution guidelines available.
 No test instructions available.
 
 ## License
-README Generator is available under the [Perl License](https://opensource.org/licenses/Artistic-2.0).
+README Generator is available under the [Apache License](https://opensource.org/licenses/Apache-2.0).
 
 ## Questions
 Questions, comments, concerns? Contact me on [Github](https://github.com/richardjhong) or send me an email at rhong24@gmail.com.

@@ -24,8 +24,7 @@ const renderLicenseSection = (license, title) =>{
   }
 }
 
-const generateMarkdown = (data) => {
-  const { username, email, license, title, description, installation, usage, contributions, testing } = data
+const generateMarkdown = ({ username, email, license, title, description, installation, usage, contributions, testing }) => {
 
   return `# ${title}
 
