@@ -24,15 +24,19 @@ const renderLicenseSection = (license, title) =>{
   }
 }
 
+// Nullish coalescing operator is used on line 33 to evaluate if a badge should
+// be created or not
 const generateMarkdown = ({ username, email, license, title, description, installation, usage, contributions, testing }) => {
 
   return `# ${title}
 
 ${renderLicenseBadge(license) ?? ""}
 ## Description
+***
 ${description}
 
 ## Table of Contents
+***
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributions](#contributions)
@@ -40,23 +44,29 @@ ${description}
 - [License](#license)
 
 ## Installation
+***
 \`\`\`
 ${installation.trim()}
 \`\`\`
 
 ## Usage
-${usage ?? null}
+***
+${usage}
 
 ## Contributions
-${contributions ?? null}
+***
+${contributions}
 
 ## Testing
-${testing ?? null}
+***
+${testing}
 
 ## License
+***
 ${renderLicenseSection(license, title)}
 
 ## Questions
+***
 Questions, comments, concerns? Contact me on [Github](https://github.com/${username}) or send me an email at ${email}.
 `
 }
