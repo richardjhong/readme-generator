@@ -64,7 +64,5 @@ Questions, comments, concerns? Contact me on [Github](https://github.com/${usern
 }
 
 module.exports = {
-  renderLicenseBadge,
-  renderLicenseSection,
   generateMarkdown
 }

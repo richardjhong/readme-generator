@@ -5,7 +5,7 @@
 ![README-generator.gif](./assets/images/screen_recording.gif)
 
 ## Description
-As Github repositories typically have a README file to explain the app/project, its installation directions, contributers, technologies used, code architecture, etc. to give a high level look at the project, being able to automate this process allows more efficiency with boilerplate code. As such, this app's purpose is simply to take user input via the CLI and create a README markdown file. 
+As Github repositories typically have a README file to explain the app/project, its installation directions, technologies used, code architecture, etc. to give a high level look at the project, being able to automate this process allows for more efficiency with boilerplate code. As such, this app's purpose is simply to take user input to a series of prompts via the CLI and create a README markdown file according to the responses. 
 
 
 ## Technologies
@@ -38,12 +38,12 @@ Afterwards check towards the bottom within package.json; the user should see inq
 ```
 
 ## Usage
-After installing inquirer in installation, the user should run the following commands within the terminal:
+After installing inquirer, the user should run the following commands within the terminal:
 ```
-cd assets/js/index.js
+cd assets/js
 node index.js
 ```
-The CLI should ask a series of questions to grab which information to dynamically load into the README file. To change which to save to, the user should replace the "Sample.md" within writeToFile on line 91 of index.js in assets/js.
+The CLI will ask a series of questions to grab which information to dynamically load into the README file. To change which to save to, the user should replace the "Sample.md" within writeToFile on line 91 of index.js in assets/js.
 
 User should be aware that the prompt 'Please list any installation instructions at this time.' will open the editor within terminal. This was intentional to allow for multi line commands to be written rather than having to create multiple single line inputs. After creating the installation instructions, the user should hit ESC and the following command to escape and save out of the editor:
 ```
@@ -57,7 +57,7 @@ The code is split into two files: the main index.js within assets/js and the gen
   * generateMarkdown.js has three functions in total that are exported to index.js:
     - renderLicenseBadge creates a clickable badge that links to the respective license type based on a switch statement.
     - renderLicenseSection is used to inform which section to add to the License section of the README within the generateMarkdown function.
-    - generateMarkdown function takes data and via destructuring uses string literal notation to literally create the README file with information added via the destructured inquirer responses.
+    - generateMarkdown function takes data and uses string literal notation to format (with literal indentation) the README file with information added via the destructured inquirer responses.
 
 
 ## Screenshot
@@ -69,7 +69,7 @@ This app was licensed under the MIT License.
 
 
 ## Improvements
-To deal with the logic on whether to display the license badge as needed within the return of generateMarkdown, I used the [Nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator). While the usage, contributions, and input prompts have default placeholder responses in the event that the user doesn't explicitly provide any, I'd look further into whether the Nullish coalescing operator can aid in the logic of whether those respective sections are included within the README altogether as needed.
+To deal with the logic on whether to display the license badge as needed within the return of generateMarkdown, I used the [Nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator). While the usage, contributions, and input prompts have default placeholder responses in the event that the user doesn't explicitly provide any, I'd look further into whether the Nullish coalescing operator can aid in the logic of whether those respective sections are included within the README altogether as needed. Another possible improvement is to include more licenses and look into a more dynamic querying of each license link and badge.
 
 
 ## Questions
