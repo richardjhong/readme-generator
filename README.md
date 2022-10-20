@@ -5,7 +5,7 @@
 ![README-generator.gif](./assets/images/screen_recording.gif)
 
 ## Description
-This app takes user input via the CLI and creates a README markdown file.
+As Github repositories typically have a README file to explain the app/project, its installation directions, contributers, technologies used, code architecture, etc. to give a high level look at the project, being able to automate this process allows more efficiency with boilerplate code. As such, this app's purpose is simply to take user input via the CLI and create a README markdown file. 
 
 
 ## Technologies
