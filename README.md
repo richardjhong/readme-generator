@@ -45,7 +45,7 @@ node index.js
 ```
 The CLI will ask a series of questions to grab which information to dynamically load into the README file. To change which to save to, the user should replace the "Sample.md" within writeToFile on line 91 of index.js in assets/js.
 
-User should be aware that the prompt 'Please list any installation instructions at this time.' will open the editor within terminal. This was intentional to allow for multi line commands to be written rather than having to create multiple single line inputs. After creating the installation instructions, the user should hit ESC and the following command to escape and save out of the editor:
+User should be aware that the prompt 'Please list any installation instructions at this time.' will open an editor within terminal. This was intentional to allow for multi line commands to be written rather than having to create multiple single line inputs. After creating the installation instructions, the user should hit ESC and the following command to escape and save out of the editor:
 ```
 :wq
 ```
@@ -53,7 +53,7 @@ User should be aware that the prompt 'Please list any installation instructions 
 
 ## Architecture
 The code is split into two files: the main index.js within assets/js and the generateMarkdown.js file within utils. 
-  * index.js has the const variables for inquirer and filesystem modules as well as imports the functions that are exported from generateMarkdown file. The questions array hold the prompts that are passed to inquirer within the init function. Via the use of destructuring, each prompt is passed to inquirer which then passes the return of the promise into writeToFile helper function. writeToFile helper function takes the response from inquirer promise and then writes to the specified file data that has been converted viat he generateMarkdown imported function. If it is successful, the console logs where the responses are saved to; otherwise it will console error the error.
+  * index.js has the const variables for inquirer and filesystem modules as well as imports the functions that are exported from generateMarkdown file. The questions array hold the prompts that are passed to inquirer within the init function. Via the use of destructuring, each prompt is passed to inquirer which then passes the return of the promise into writeToFile helper function. writeToFile helper function takes the response from inquirer promise and then writes to the specified file data that has been converted via the generateMarkdown imported function. If it is successful, the console logs where the responses are saved to; otherwise it will console error the error.
   * generateMarkdown.js has three functions in total that are exported to index.js:
     - renderLicenseBadge creates a clickable badge that links to the respective license type based on a switch statement.
     - renderLicenseSection is used to inform which section to add to the License section of the README within the generateMarkdown function.
