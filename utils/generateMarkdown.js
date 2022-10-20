@@ -32,11 +32,9 @@ const generateMarkdown = ({ username, email, license, title, description, instal
 
 ${renderLicenseBadge(license) ?? ""}
 ## Description
-***
 ${description}
 
 ## Table of Contents
-***
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributions](#contributions)
@@ -44,29 +42,23 @@ ${description}
 - [License](#license)
 
 ## Installation
-***
 \`\`\`
 ${installation.trim()}
 \`\`\`
 
 ## Usage
-***
 ${usage}
 
 ## Contributions
-***
 ${contributions}
 
 ## Testing
-***
 ${testing}
 
 ## License
-***
 ${renderLicenseSection(license, title)}
 
 ## Questions
-***
 Questions, comments, concerns? Contact me on [Github](https://github.com/${username}) or send me an email at ${email}.
 `
 }
