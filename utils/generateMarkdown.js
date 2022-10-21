@@ -56,7 +56,7 @@ ${contributions}
 ${testing}
 
 ## License
-${renderLicenseSection(license, title)}
+${renderLicenseSection(license, title) ?? ""}
 
 ## Questions
 Questions, comments, concerns? Contact me on [Github](https://github.com/${username}) or send me an email at ${email}.
